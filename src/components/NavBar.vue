@@ -43,13 +43,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
-  width: calc(100dvw - 2em);
+  width: calc(100dvw - 4em);
   max-width: 1440px;
   margin: 0 auto;
-
-  @media (max-width: 424px) {
-    width: calc(100dvw - 16px);
-  }
 }
 
 a {
