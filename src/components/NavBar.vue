@@ -1,11 +1,11 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
   isLoggedIn: Boolean,
-})
+});
 
-const isModalEnabled = ref(false)
+const isModalEnabled = ref(false);
 </script>
 
 <template>
@@ -17,7 +17,13 @@ const isModalEnabled = ref(false)
       <a v-else>Sign In</a>
     </div>
     <a class="mobile-only" v-on:click="isModalEnabled = !isModalEnabled">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+      >
         <rect y="7" width="32" height="4" rx="2" fill="white" />
         <rect y="14" width="32" height="4" rx="2" fill="white" />
         <rect y="21" width="32" height="4" rx="2" fill="white" />
@@ -25,7 +31,11 @@ const isModalEnabled = ref(false)
     </a>
   </nav>
   <Transition name="fade">
-    <div class="modal-container mobile-only" v-show="isModalEnabled" v-on:click.self="isModalEnabled = false">
+    <div
+      class="modal-container mobile-only"
+      v-show="isModalEnabled"
+      v-on:click.self="isModalEnabled = false"
+    >
       <Transition name="slide-from-top">
         <div class="modal" v-show="isModalEnabled">
           <a>Leaderboards</a>
@@ -43,7 +53,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
-  width: calc(100dvw - 4em);
+  width: calc(100dvw - 3em);
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -109,7 +119,7 @@ a {
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 24px
+    gap: 24px;
   }
 }
 
