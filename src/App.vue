@@ -18,12 +18,14 @@ import Game from "./components/Game.vue";
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  width: 100dvw;
+  height: 100dvh;
 }
 
 .main-view {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 100%;
   height: 100%;

@@ -70,16 +70,15 @@ h6 {
 }
 /* Reset End */
 
-a {
+button {
   color: white;
   transition: all 0.2s ease-in-out;
+  background-color: #ffffff00;
+  border: none;
 }
-a:hover {
+button:hover {
   filter: brightness(0.8);
   cursor: pointer;
-}
-a:visited {
-  color: white;
 }
 body {
   margin: 0;

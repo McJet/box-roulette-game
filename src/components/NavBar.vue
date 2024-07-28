@@ -10,13 +10,13 @@ const isModalEnabled = ref(false);
 
 <template>
   <nav>
-    <a class="title">Box Roulette</a>
+    <button class="title">Box Roulette</button>
     <div class="desktop-only">
-      <a>Leaderboards</a>
-      <a v-if="isLoggedIn">Log Out</a>
-      <a v-else>Sign In</a>
+      <button>Leaderboards</button>
+      <button v-if="isLoggedIn">Log Out</button>
+      <button v-else>Sign In</button>
     </div>
-    <a class="mobile-only" v-on:click="isModalEnabled = !isModalEnabled">
+    <button class="mobile-only" v-on:click="isModalEnabled = !isModalEnabled">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -28,7 +28,7 @@ const isModalEnabled = ref(false);
         <rect y="14" width="32" height="4" rx="2" fill="white" />
         <rect y="21" width="32" height="4" rx="2" fill="white" />
       </svg>
-    </a>
+    </button>
   </nav>
   <Transition name="fade">
     <div
@@ -38,9 +38,9 @@ const isModalEnabled = ref(false);
     >
       <Transition name="slide-from-top">
         <div class="modal" v-show="isModalEnabled">
-          <a>Leaderboards</a>
-          <a v-if="isLoggedIn">Log Out</a>
-          <a v-else>Sign In</a>
+          <button>Leaderboards</button>
+          <button v-if="isLoggedIn">Log Out</button>
+          <button v-else>Sign In</button>
         </div>
       </Transition>
     </div>
@@ -58,7 +58,7 @@ nav {
   margin: 0 auto;
 }
 
-a {
+button {
   font-size: 24px;
 }
 
@@ -100,7 +100,7 @@ a {
   height: 144px;
   border-radius: 0 0 24px 24px;
 
-  a {
+  button {
     color: black;
   }
 }
