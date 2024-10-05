@@ -3,6 +3,7 @@
 
   /* color-scheme: light dark; */
   color: white;
+  background-color: black;
 }
 /* CSS Reset By Josh Comeau https://www.joshwcomeau.com/css/custom-css-reset/ */
 /*
@@ -76,7 +77,6 @@ button {
   border: none;
 }
 button:hover {
-  filter: brightness(0.8);
   cursor: pointer;
 }
 body {
@@ -84,7 +84,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  place-items: center;
-  min-width: 320px;
+  min-width: 250px;
   min-height: 100vh;
 }

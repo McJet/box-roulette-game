@@ -41,6 +41,6 @@ const boxValue = computed(() => {
   height: 100%;
   border-radius: 24px;
   color: black;
-  font-size: clamp(1rem, calc(3rem + 5vw), 6rem);
+  font-size: clamp(2rem, 10vw, 4rem);
 }
 </style>

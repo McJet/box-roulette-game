@@ -67,7 +67,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
-  width: calc(100dvw - 3em);
+  width: 100dvw;
   max-width: 1440px;
   margin: 0 auto;
 }
