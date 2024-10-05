@@ -10,4 +10,6 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 A small personal project made by Jet Ysalina.
 
+https://box-roulette.web.app/
+
 _TODO: write a better description about this project_
