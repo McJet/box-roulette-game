@@ -1,36 +1,60 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
   isLoggedIn: Boolean,
-})
+});
 
-const isModalEnabled = ref(false)
+const isModalEnabled = ref(false);
+
+function onLeaderboardsClick() {
+  notReady();
+}
+function onSignInClick() {
+  notReady();
+}
+function onLogOutClick() {
+  notReady();
+}
+
+function notReady() {
+  alert("This feature is not ready yet!\n-Jet");
+}
 </script>
 
 <template>
   <nav>
-    <a class="title">Box Roulette</a>
+    <button class="title">Box Roulette</button>
     <div class="desktop-only">
-      <a>Leaderboards</a>
-      <a v-if="isLoggedIn">Log Out</a>
-      <a v-else>Sign In</a>
+      <button v-on:click="onLeaderboardsClick">Leaderboards</button>
+      <button v-if="isLoggedIn" v-on:click="onLogOutClick">Log Out</button>
+      <button v-else v-on:click="onSignInClick">Sign In</button>
     </div>
-    <a class="mobile-only" v-on:click="isModalEnabled = !isModalEnabled">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <button class="mobile-only" v-on:click="isModalEnabled = !isModalEnabled">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+      >
         <rect y="7" width="32" height="4" rx="2" fill="white" />
         <rect y="14" width="32" height="4" rx="2" fill="white" />
         <rect y="21" width="32" height="4" rx="2" fill="white" />
       </svg>
-    </a>
+    </button>
   </nav>
   <Transition name="fade">
-    <div class="modal-container mobile-only" v-show="isModalEnabled" v-on:click.self="isModalEnabled = false">
+    <div
+      class="modal-container mobile-only"
+      v-show="isModalEnabled"
+      v-on:click.self="isModalEnabled = false"
+    >
       <Transition name="slide-from-top">
         <div class="modal" v-show="isModalEnabled">
-          <a>Leaderboards</a>
-          <a v-if="isLoggedIn">Log Out</a>
-          <a v-else>Sign In</a>
+          <button v-on:click="onLeaderboardsClick">Leaderboards</button>
+          <button v-if="isLoggedIn" v-on:click="onLogOutClick">Log Out</button>
+          <button v-else v-on:click="onSignInClick">Sign In</button>
         </div>
       </Transition>
     </div>
@@ -43,16 +67,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
-  width: calc(100dvw - 2em);
+  width: calc(100dvw - 3em);
   max-width: 1440px;
   margin: 0 auto;
-
-  @media (max-width: 424px) {
-    width: calc(100dvw - 16px);
-  }
 }
 
-a {
+button {
   font-size: 24px;
 }
 
@@ -94,7 +114,7 @@ a {
   height: 144px;
   border-radius: 0 0 24px 24px;
 
-  a {
+  button {
     color: black;
   }
 }
@@ -113,7 +133,7 @@ a {
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 24px
+    gap: 24px;
   }
 }
 
