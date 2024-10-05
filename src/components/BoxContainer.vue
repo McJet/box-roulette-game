@@ -9,21 +9,13 @@ const props = defineProps({
 });
 </script>
 
-<template>
-  <div class="box-container">
-    <Box>{{ box1Content }}</Box>
-    <Box>{{ box2Content }}</Box>
-    <Box>{{ box3Content }}</Box>
-    <Box>{{ box4Content }}</Box>
-  </div>
-</template>
+<template></template>
 
 <style scoped>
 .box-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: calc(1dvh - 50px);
   gap: 1em;
   width: 90vw;
   height: 90vw;

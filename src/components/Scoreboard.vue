@@ -1,25 +1,20 @@
 <script setup>
 import { ref } from "vue";
+import gameController from "../gameController.js";
 
-const props = defineProps({
-  moneyAmount: Number,
-  boxesAmount: Number,
-});
-// add commas to the amounts
-const formattedMoneyAmount = ref(props.moneyAmount.toLocaleString());
-const formattedBoxesAmount = ref(props.boxesAmount.toLocaleString());
+const { moneyAmount, boxOpenedAmount } = gameController();
 </script>
 
 <template>
   <div class="scoreboard">
     <div class="inner">
       <p class="label">Money Earned</p>
-      <p>${{ formattedMoneyAmount }}</p>
+      <p>${{ moneyAmount }}</p>
     </div>
     <div class="line"></div>
     <div class="inner">
       <p class="label">Boxes Opened</p>
-      <p>{{ formattedBoxesAmount }}</p>
+      <p>{{ boxOpenedAmount }}</p>
     </div>
   </div>
 </template>
@@ -29,7 +24,7 @@ const formattedBoxesAmount = ref(props.boxesAmount.toLocaleString());
   display: flex;
   justify-content: center;
   gap: 1em;
-  font-size: calc(10px + 2vmin);
+  font-size: clamp(1rem, 5vw, 1.75rem);
 }
 .inner {
   display: flex;
